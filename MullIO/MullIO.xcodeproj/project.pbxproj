@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19E6771483882E8367879598 /* PickupStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA51696E081981A6B7DF05C /* PickupStore.swift */; };
+		6408B3F21818A21AB3F35AF6 /* FetchFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7588424204E4A8C93A30FA /* FetchFrequency.swift */; };
+		88893EE7C5B0499A5A3283FD /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446FCDDFA595DBE3B463341 /* MenuBarController.swift */; };
+		91D01A498E970B6E806648CE /* PickupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9533E683C60369185AE33 /* PickupResult.swift */; };
+		9D6BC39BEA0695FC0DE64E88 /* LaunchAtLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14971C55ED140E0635C9FD0F /* LaunchAtLoginService.swift */; };
+		A63AB972276C1C62F44AF111 /* MullIOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D2EC1C8FB7ECBB2202E85 /* MullIOApp.swift */; };
+		AC430448A77FB7BD924E3BC6 /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B306E67D652D636A88B596 /* AddLocationView.swift */; };
+		B4D5A64CDC0C31736999C47A /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F3E052AE546B108C2B9F8D /* AppSettings.swift */; };
+		BE64550645C04E172456A143 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06334B5730A5C140D0126093 /* APIService.swift */; };
+		C5037492B9716E3F540B6D34 /* StoredLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448761B4342D15B90E729D7 /* StoredLocation.swift */; };
+		C5B260C856927C56C625589B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA110029673E4832598B80D5 /* Assets.xcassets */; };
+		CC1E20D0B5569F1852E70139 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153939D765C300FDECC157A /* AboutView.swift */; };
+		EDAD65EAF1DBC5676F830C8D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C132D3D69180630F452C5B /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0448761B4342D15B90E729D7 /* StoredLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLocation.swift; sourceTree = "<group>"; };
+		04A9533E683C60369185AE33 /* PickupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupResult.swift; sourceTree = "<group>"; };
+		06334B5730A5C140D0126093 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		14971C55ED140E0635C9FD0F /* LaunchAtLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginService.swift; sourceTree = "<group>"; };
+		1B2D2EC1C8FB7ECBB2202E85 /* MullIOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MullIOApp.swift; sourceTree = "<group>"; };
+		2377D7264186205563CA0698 /* MullIO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MullIO.entitlements; sourceTree = "<group>"; };
+		2A97D83E645BB29FDE4A057F /* MullIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MullIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37DFB049C30967B8FF7232E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		40B306E67D652D636A88B596 /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
+		4446FCDDFA595DBE3B463341 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		47F3E052AE546B108C2B9F8D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		4AA51696E081981A6B7DF05C /* PickupStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupStore.swift; sourceTree = "<group>"; };
+		B153939D765C300FDECC157A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		C4C132D3D69180630F452C5B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CC7588424204E4A8C93A30FA /* FetchFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFrequency.swift; sourceTree = "<group>"; };
+		FA110029673E4832598B80D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1F5E2C960DC21EF691529984 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B63F2C405E5604EA46C162C1 /* App */,
+				49FAEA7E241E1A9BB316115C /* Models */,
+				BCBE2805C043A4A213F558CF /* Resources */,
+				56DAC2AD8B468FD41FA928A6 /* Services */,
+				22E9DD0BB5CB56C2150DB913 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		22E9DD0BB5CB56C2150DB913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B153939D765C300FDECC157A /* AboutView.swift */,
+				40B306E67D652D636A88B596 /* AddLocationView.swift */,
+				C4C132D3D69180630F452C5B /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A97128498FE75D83099C0FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A97D83E645BB29FDE4A057F /* MullIO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FAEA7E241E1A9BB316115C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47F3E052AE546B108C2B9F8D /* AppSettings.swift */,
+				CC7588424204E4A8C93A30FA /* FetchFrequency.swift */,
+				04A9533E683C60369185AE33 /* PickupResult.swift */,
+				0448761B4342D15B90E729D7 /* StoredLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56DAC2AD8B468FD41FA928A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06334B5730A5C140D0126093 /* APIService.swift */,
+				14971C55ED140E0635C9FD0F /* LaunchAtLoginService.swift */,
+				4AA51696E081981A6B7DF05C /* PickupStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B63F2C405E5604EA46C162C1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4446FCDDFA595DBE3B463341 /* MenuBarController.swift */,
+				1B2D2EC1C8FB7ECBB2202E85 /* MullIOApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BCBE2805C043A4A213F558CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA110029673E4832598B80D5 /* Assets.xcassets */,
+				37DFB049C30967B8FF7232E2 /* Info.plist */,
+				2377D7264186205563CA0698 /* MullIO.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D19F0A074C9AD285277E943C = {
+			isa = PBXGroup;
+			children = (
+				1F5E2C960DC21EF691529984 /* Sources */,
+				2A97128498FE75D83099C0FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69BA13EE59AA3A197E8125A0 /* MullIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7955788AA25626B04C1884AE /* Build configuration list for PBXNativeTarget "MullIO" */;
+			buildPhases = (
+				50EF2C92D8CD4A2027AAA626 /* Sources */,
+				6B4F923DB23DBB252C1BCB68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MullIO;
+			packageProductDependencies = (
+			);
+			productName = MullIO;
+			productReference = 2A97D83E645BB29FDE4A057F /* MullIO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B5191070BCC46F9FCDB7FD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					69BA13EE59AA3A197E8125A0 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 9DAD6413EE578382469BD4F9 /* Build configuration list for PBXProject "MullIO" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D19F0A074C9AD285277E943C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2A97128498FE75D83099C0FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69BA13EE59AA3A197E8125A0 /* MullIO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B4F923DB23DBB252C1BCB68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5B260C856927C56C625589B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50EF2C92D8CD4A2027AAA626 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE64550645C04E172456A143 /* APIService.swift in Sources */,
+				CC1E20D0B5569F1852E70139 /* AboutView.swift in Sources */,
+				AC430448A77FB7BD924E3BC6 /* AddLocationView.swift in Sources */,
+				B4D5A64CDC0C31736999C47A /* AppSettings.swift in Sources */,
+				6408B3F21818A21AB3F35AF6 /* FetchFrequency.swift in Sources */,
+				9D6BC39BEA0695FC0DE64E88 /* LaunchAtLoginService.swift in Sources */,
+				88893EE7C5B0499A5A3283FD /* MenuBarController.swift in Sources */,
+				A63AB972276C1C62F44AF111 /* MullIOApp.swift in Sources */,
+				91D01A498E970B6E806648CE /* PickupResult.swift in Sources */,
+				19E6771483882E8367879598 /* PickupStore.swift in Sources */,
+				EDAD65EAF1DBC5676F830C8D /* SettingsView.swift in Sources */,
+				C5037492B9716E3F540B6D34 /* StoredLocation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		490C9AE6CF7AAE4F08ECBFAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		D7958BFC5E42CE7EAC0D7CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Sources/Resources/MullIO.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.muell.MenuBar;
+				PRODUCT_NAME = "müll.io";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		FC03AA73770F40D7D8C00389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Sources/Resources/MullIO.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.muell.MenuBar;
+				PRODUCT_NAME = "müll.io";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		FF997E8358992DD66217DEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7955788AA25626B04C1884AE /* Build configuration list for PBXNativeTarget "MullIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7958BFC5E42CE7EAC0D7CCF /* Debug */,
+				FC03AA73770F40D7D8C00389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9DAD6413EE578382469BD4F9 /* Build configuration list for PBXProject "MullIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF997E8358992DD66217DEAF /* Debug */,
+				490C9AE6CF7AAE4F08ECBFAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B5191070BCC46F9FCDB7FD3 /* Project object */;
+}

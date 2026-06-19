@@ -1,0 +1,65 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        working-directory: MullIO
+        run: xcodegen generate
+
+      - name: Build (Release)
+        working-directory: MullIO
+        run: |
+          xcodebuild \
+            -project MullIO.xcodeproj \
+            -scheme MullIO \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Sign app (ad-hoc)
+        run: |
+          APP=$(find "$HOME/Library/Developer/Xcode/DerivedData" \
+            -name "*.app" -path "*/Release/*" | head -1)
+          echo "Signing: $APP"
+          # Binaries zuerst, dann Bundle
+          find "$APP/Contents/MacOS" -type f | while read f; do
+            codesign --force --sign - "$f"
+          done
+          find "$APP/Contents/Frameworks" -name "*.dylib" 2>/dev/null | while read f; do
+            codesign --force --sign - "$f"
+          done
+          codesign --force --sign - "$APP"
+          codesign -v "$APP"
+
+      - name: Package as ZIP
+        id: package
+        run: |
+          APP=$(find "$HOME/Library/Developer/Xcode/DerivedData" \
+            -name "*.app" -path "*/Release/*" | head -1)
+          APP_DIR=$(dirname "$APP")
+          ZIP_NAME="muell.io-${{ github.ref_name }}.zip"
+          cd "$APP_DIR"
+          zip -r "$ZIP_NAME" "$(basename "$APP")"
+          echo "zip_path=$APP_DIR/$ZIP_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.package.outputs.zip_path }}
+          generate_release_notes: true
