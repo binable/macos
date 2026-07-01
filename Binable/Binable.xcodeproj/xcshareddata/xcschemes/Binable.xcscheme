@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69BA13EE59AA3A197E8125A0"
-               BuildableName = "MullIO.app"
-               BlueprintName = "MullIO"
-               ReferencedContainer = "container:MullIO.xcodeproj">
+               BlueprintIdentifier = "A7E3D8E5A29774186F86C0F8"
+               BuildableName = "Binable.app"
+               BlueprintName = "Binable"
+               ReferencedContainer = "container:Binable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69BA13EE59AA3A197E8125A0"
-            BuildableName = "MullIO.app"
-            BlueprintName = "MullIO"
-            ReferencedContainer = "container:MullIO.xcodeproj">
+            BlueprintIdentifier = "A7E3D8E5A29774186F86C0F8"
+            BuildableName = "Binable.app"
+            BlueprintName = "Binable"
+            ReferencedContainer = "container:Binable.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -57,10 +57,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69BA13EE59AA3A197E8125A0"
-            BuildableName = "MullIO.app"
-            BlueprintName = "MullIO"
-            ReferencedContainer = "container:MullIO.xcodeproj">
+            BlueprintIdentifier = "A7E3D8E5A29774186F86C0F8"
+            BuildableName = "Binable.app"
+            BlueprintName = "Binable"
+            ReferencedContainer = "container:Binable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69BA13EE59AA3A197E8125A0"
-            BuildableName = "MullIO.app"
-            BlueprintName = "MullIO"
-            ReferencedContainer = "container:MullIO.xcodeproj">
+            BlueprintIdentifier = "A7E3D8E5A29774186F86C0F8"
+            BuildableName = "Binable.app"
+            BlueprintName = "Binable"
+            ReferencedContainer = "container:Binable.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>

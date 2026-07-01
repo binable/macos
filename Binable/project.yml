@@ -1,6 +1,6 @@
-name: MullIO
+name: Binable
 options:
-  bundleIdPrefix: io.muell
+  bundleIdPrefix: app.binable
   deploymentTarget:
     macOS: "15.0"
   defaultConfig: Debug
@@ -16,7 +16,7 @@ settings:
       ENABLE_HARDENED_RUNTIME: YES
 
 targets:
-  MullIO:
+  Binable:
     type: application
     platform: macOS
     deploymentTarget: "15.0"
@@ -24,10 +24,10 @@ targets:
       - path: Sources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: io.muell.MenuBar
-        PRODUCT_NAME: müll.io
+        PRODUCT_BUNDLE_IDENTIFIER: app.binable.MenuBar
+        PRODUCT_NAME: binable
         INFOPLIST_FILE: Sources/Resources/Info.plist
-        CODE_SIGN_ENTITLEMENTS: Sources/Resources/MullIO.entitlements
+        CODE_SIGN_ENTITLEMENTS: Sources/Resources/Binable.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SWIFT_EMIT_LOC_STRINGS: YES
         COMBINE_HIDPI_IMAGES: YES

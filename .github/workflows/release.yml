@@ -17,15 +17,15 @@ jobs:
         run: brew install xcodegen
 
       - name: Generate Xcode project
-        working-directory: MullIO
+        working-directory: Binable
         run: xcodegen generate
 
       - name: Build (Release)
-        working-directory: MullIO
+        working-directory: Binable
         run: |
           xcodebuild \
-            -project MullIO.xcodeproj \
-            -scheme MullIO \
+            -project Binable.xcodeproj \
+            -scheme Binable \
             -configuration Release \
             -destination 'platform=macOS' \
             CODE_SIGNING_REQUIRED=NO \
@@ -53,7 +53,7 @@ jobs:
           APP=$(find "$HOME/Library/Developer/Xcode/DerivedData" \
             -name "*.app" -path "*/Release/*" | head -1)
           APP_DIR=$(dirname "$APP")
-          ZIP_NAME="muell.io-${{ github.ref_name }}.zip"
+          ZIP_NAME="binable-${{ github.ref_name }}.zip"
           cd "$APP_DIR"
           zip -r "$ZIP_NAME" "$(basename "$APP")"
           echo "zip_path=$APP_DIR/$ZIP_NAME" >> "$GITHUB_OUTPUT"

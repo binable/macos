@@ -21,7 +21,7 @@ final class MenuBarController: NSObject, NSMenuDelegate {
 
     private func setupStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        statusItem.button?.image = NSImage(systemSymbolName: "trash", accessibilityDescription: "müll.io")
+        statusItem.button?.image = NSImage(systemSymbolName: "trash", accessibilityDescription: "binable")
         statusItem.button?.image?.isTemplate = true
 
         menu = NSMenu()
@@ -79,7 +79,7 @@ final class MenuBarController: NSObject, NSMenuDelegate {
         settingsItem.target = self
         menu.addItem(settingsItem)
 
-        let aboutItem = NSMenuItem(title: "Über müll.io", action: #selector(openAbout), keyEquivalent: "")
+        let aboutItem = NSMenuItem(title: "Über binable", action: #selector(openAbout), keyEquivalent: "")
         aboutItem.target = self
         menu.addItem(aboutItem)
 
@@ -156,7 +156,7 @@ final class MenuBarController: NSObject, NSMenuDelegate {
             let view = AboutView()
             let hosting = NSHostingController(rootView: view)
             let window = NSWindow(contentViewController: hosting)
-            window.title = "Über müll.io"
+            window.title = "Über binable"
             window.styleMask = [.titled, .closable]
             window.center()
             window.isReleasedWhenClosed = false

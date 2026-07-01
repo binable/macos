@@ -12,7 +12,7 @@ struct AboutView: View {
                 .foregroundStyle(Color.accentColor)
                 .symbolRenderingMode(.hierarchical)
 
-            Text("müll.io")
+            Text("binable")
                 .font(.largeTitle.bold())
 
             Text("Version \(version)")
@@ -24,7 +24,7 @@ struct AboutView: View {
                 Text("Deine Abfuhrtermine — immer dabei.")
                     .multilineTextAlignment(.center)
 
-                Text("müll.io verbindet dich mit den offiziellen Abfuhrdaten deines Landkreises oder deiner Stadt. Über 300 Standorte in Deutschland, Österreich und der Schweiz.")
+                Text("binable verbindet dich mit den offiziellen Abfuhrdaten deines Landkreises oder deiner Stadt. Über 300 Standorte in Deutschland, Österreich und der Schweiz.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
                     .font(.callout)
@@ -34,9 +34,9 @@ struct AboutView: View {
             Divider()
 
             HStack(spacing: 20) {
-                Link("Website", destination: URL(string: "https://muell.io")!)
-                Link("Datenschutz", destination: URL(string: "https://muell.io/datenschutz")!)
-                Link("Impressum", destination: URL(string: "https://muell.io/impressum")!)
+                Link("Website", destination: URL(string: "https://binable.app")!)
+                Link("Datenschutz", destination: URL(string: "https://binable.app/datenschutz")!)
+                Link("Impressum", destination: URL(string: "https://binable.app/impressum")!)
             }
             .font(.callout)
         }

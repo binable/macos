@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct MullIOApp: App {
+struct BinableApp: App {
 
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 

@@ -20,7 +20,7 @@ actor APIService {
 
     static let shared = APIService()
 
-    private let baseURL = "https://xn--mll-hoa.io/api/fetch"
+    private let baseURL = "https://binable.app/api/fetch"
     private let session: URLSession
 
     private init() {
@@ -58,7 +58,7 @@ actor APIService {
         }
 
         do {
-            return try JSONDecoder().decode(MullIOResponse.self, from: data).entries
+            return try JSONDecoder().decode(BinableResponse.self, from: data).entries
         } catch {
             throw APIError.decodingError(error)
         }

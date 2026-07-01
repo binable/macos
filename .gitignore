@@ -7,6 +7,7 @@ DerivedData/
 *.ipa
 *.xcarchive
 build/
+/.idea
 
 # Swift Package Manager
 .build/

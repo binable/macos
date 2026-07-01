@@ -1,96 +1,96 @@
-# müll.io — macOS Menu Bar App
+# binable — macOS Menu Bar App
 
-Native macOS Menu Bar App, die Abfuhrtermine von [müll.io](https://müll.io) anzeigt.
+Native macOS menu bar app that shows waste-collection dates from [binable](https://binable.app).
 
-## Voraussetzungen
+## Requirements
 
-- macOS 15 (Sequoia) oder neuer
+- macOS 15 (Sequoia) or newer
 - Xcode 16+
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen): `brew install xcodegen`
 
 ## Build & Run
 
-### Schnellstart (CLI)
+### Quick start (CLI)
 
 ```bash
 ./build.sh
 ```
 
-Das Script generiert das Xcode-Projekt, baut die App und signiert sie. Die App liegt danach unter:
-`~/Library/Developer/Xcode/DerivedData/MullIO-*/Build/Products/Debug/müll.io.app`
+The script generates the Xcode project, builds the app and signs it. The app is then located at:
+`~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/binable.app`
 
-Zum Starten:
+To launch it:
 ```bash
-open ~/Library/Developer/Xcode/DerivedData/MullIO-*/Build/Products/Debug/müll.io.app
+open ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/binable.app
 ```
 
-### Manuell (Schritt für Schritt)
+### Manual (step by step)
 
 ```bash
-# 1. Xcode-Projekt generieren
-cd MullIO && xcodegen generate
+# 1. Generate the Xcode project
+cd Binable && xcodegen generate
 
-# 2. Bauen (ohne Signing — siehe Hinweis unten)
+# 2. Build (without signing — see the note below)
 xcodebuild \
-  -project MullIO.xcodeproj \
-  -scheme MullIO \
+  -project Binable.xcodeproj \
+  -scheme Binable \
   -configuration Debug \
   -destination 'platform=macOS' \
   build
 
-# 3. App signieren (zwei Schritte nötig)
-APP=$(find ~/Library/Developer/Xcode/DerivedData/MullIO-*/Build/Products/Debug -name "*.app" | head -1)
-codesign --force --sign - "$APP/Contents/MacOS/müll.io"
+# 3. Sign the app (two steps required)
+APP=$(find ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug -name "*.app" | head -1)
+codesign --force --sign - "$APP/Contents/MacOS/binable"
 codesign --force --sign - "$APP"
 
-# 4. Starten
+# 4. Launch
 open "$APP"
 ```
 
-### In Xcode öffnen
+### Open in Xcode
 
 ```bash
-cd MullIO && xcodegen generate
-open MullIO.xcodeproj
+cd Binable && xcodegen generate
+open Binable.xcodeproj
 ```
 
-### Hinweis: Signing auf macOS 26 (Tahoe)
+### Note: Signing on macOS 26 (Tahoe)
 
-Auf macOS 26 fügt Xcodes Build-System `-no_adhoc_codesign` zum Linker hinzu, sodass das
-Binary absichtlich unsigniert bleibt und eine explizite Signing-Step erwartet. `codesign`
-verweigert auf macOS 26 das Signieren eines App-Bundles, wenn das enthaltene Binary
-noch keine Signatur trägt — der Bundle muss daher in zwei Schritten signiert werden
-(erst Binary, dann Bundle). Das `build.sh` Script übernimmt das automatisch.
+On macOS 26 Xcode's build system adds `-no_adhoc_codesign` to the linker, so the
+binary is intentionally left unsigned and an explicit signing step is expected. On
+macOS 26 `codesign` refuses to sign an app bundle while the enclosed binary is still
+unsigned — the bundle therefore has to be signed in two steps (first the binary, then
+the bundle). The `build.sh` script does this automatically.
 
-Wenn macOS Gatekeeper die heruntergeladene App blockiert:
+If macOS Gatekeeper blocks the downloaded app:
 ```bash
-xattr -cr /path/to/müll.io.app
+xattr -cr /path/to/binable.app
 ```
 
 ## Release
 
-Ein neues Release wird durch einen Git-Tag ausgelöst:
+A new release is triggered by a Git tag:
 
 ```bash
 git tag 1.0.0
 git push origin 1.0.0
 ```
 
-Die GitHub Action baut die App automatisch in der Release-Konfiguration, signiert sie
-(ad-hoc) und hängt ein ZIP-Archiv an das GitHub Release.
+The GitHub Action automatically builds the app in the release configuration, signs it
+(ad-hoc) and attaches a ZIP archive to the GitHub release.
 
-## Funktionen
+## Features
 
-- **Menu Bar Icon** (Mülleimer) — kein Dock-Icon, kein App-Switcher
-- **Nächste Abfuhrtermine** pro Standort direkt im Menü
-- **Mehrere Standorte** konfigurierbar (Straße, PLZ, Stadt, Land)
-- **Fetch-Frequenz** einstellbar: 12 Stunden, täglich, 2-tägig
-- **Launch at Login** via `SMAppService`
-- **Optionaler API-Key** für müll.io-Accounts mit API-Zugriff
+- **Menu bar icon** (trash can) — no Dock icon, no app switcher
+- **Upcoming collection dates** per location right in the menu
+- **Multiple locations** configurable (street, ZIP, city, country)
+- **Fetch frequency** adjustable: 12 hours, daily, every 2 days
+- **Launch at login** via `SMAppService`
+- **Optional API key** for binable accounts with API access
 
 ## API
 
-Die App ruft `POST https://müll.io/api/fetch` auf:
+The app calls `POST https://binable.app/api/fetch`:
 
 ```json
 {
@@ -102,33 +102,33 @@ Die App ruft `POST https://müll.io/api/fetch` auf:
 }
 ```
 
-## Projekt-Struktur
+## Project structure
 
 ```
-mull-io-macos/
-├── build.sh                         CLI-Build-Script
-├── .github/workflows/release.yml   GitHub Action (Tag → Release)
-└── MullIO/
-    ├── project.yml                  XcodeGen-Spec
+binable-macos/
+├── build.sh                         CLI build script
+├── .github/workflows/release.yml   GitHub Action (tag → release)
+└── Binable/
+    ├── project.yml                  XcodeGen spec
     └── Sources/
         ├── App/
-        │   ├── MullIOApp.swift      @main, NSApplicationDelegateAdaptor
-        │   └── MenuBarController.swift  NSStatusItem + NSMenu + Fensterverwaltung
+        │   ├── BinableApp.swift     @main, NSApplicationDelegateAdaptor
+        │   └── MenuBarController.swift  NSStatusItem + NSMenu + window management
         ├── Models/
         │   ├── StoredLocation.swift
         │   ├── PickupResult.swift
         │   ├── FetchFrequency.swift
-        │   └── AppSettings.swift    UserDefaults-Wrapper
+        │   └── AppSettings.swift    UserDefaults wrapper
         ├── Services/
-        │   ├── APIService.swift     müll.io REST-Client
-        │   ├── PickupStore.swift    @MainActor Datenhaltung + Auto-Refresh
-        │   └── LaunchAtLoginService.swift  SMAppService-Wrapper
+        │   ├── APIService.swift     binable REST client
+        │   ├── PickupStore.swift    @MainActor data store + auto refresh
+        │   └── LaunchAtLoginService.swift  SMAppService wrapper
         ├── Views/
-        │   ├── SettingsView.swift   Tabs: Standorte + Allgemein
-        │   ├── AddLocationView.swift Sheet zum Hinzufügen
+        │   ├── SettingsView.swift   Tabs: Locations + General
+        │   ├── AddLocationView.swift Sheet for adding a location
         │   └── AboutView.swift
         └── Resources/
             ├── Info.plist           LSUIElement = YES
-            ├── MullIO.entitlements
+            ├── Binable.entitlements
             └── Assets.xcassets/
 ```

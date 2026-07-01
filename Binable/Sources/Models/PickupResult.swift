@@ -1,7 +1,7 @@
 import Foundation
 
-// Decodes the müll.io API response dynamically via typeMap keys.
-struct MullIOResponse: Decodable {
+// Decodes the binable API response dynamically via typeMap keys.
+struct BinableResponse: Decodable {
     let entries: [PickupEntry]
 
     private struct WasteTypeData: Decodable {
