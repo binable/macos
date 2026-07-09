@@ -348,7 +348,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.binable.MenuBar;
-				PRODUCT_NAME = binable;
+				PRODUCT_NAME = Binable;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
@@ -372,7 +372,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.binable.MenuBar;
-				PRODUCT_NAME = binable;
+				PRODUCT_NAME = Binable;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};

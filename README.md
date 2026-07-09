@@ -17,11 +17,11 @@ Native macOS menu bar app that shows waste-collection dates from [binable](https
 ```
 
 The script generates the Xcode project, builds the app and signs it. The app is then located at:
-`~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/binable.app`
+`~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/Binable.app`
 
 To launch it:
 ```bash
-open ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/binable.app
+open ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug/Binable.app
 ```
 
 ### Manual (step by step)
@@ -40,7 +40,7 @@ xcodebuild \
 
 # 3. Sign the app (two steps required)
 APP=$(find ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug -name "*.app" | head -1)
-codesign --force --sign - "$APP/Contents/MacOS/binable"
+codesign --force --sign - "$APP/Contents/MacOS/Binable"
 codesign --force --sign - "$APP"
 
 # 4. Launch
@@ -64,7 +64,7 @@ the bundle). The `build.sh` script does this automatically.
 
 If macOS Gatekeeper blocks the downloaded app:
 ```bash
-xattr -cr /path/to/binable.app
+xattr -cr /path/to/Binable.app
 ```
 
 ## Release

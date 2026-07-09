@@ -5,7 +5,7 @@
     <key>CFBundleIdentifier</key>
     <string>app.binable.MenuBar</string>
     <key>CFBundleName</key>
-    <string>binable</string>
+    <string>Binable</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0.0</string>
     <key>CFBundleVersion</key>
@@ -17,7 +17,7 @@
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
     <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2025 binable</string>
+    <string>Copyright © 2025 Binable</string>
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsArbitraryLoads</key>

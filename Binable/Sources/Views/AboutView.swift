@@ -12,7 +12,7 @@ struct AboutView: View {
                 .foregroundStyle(Color.accentColor)
                 .symbolRenderingMode(.hierarchical)
 
-            Text("binable")
+            Text("Binable")
                 .font(.largeTitle.bold())
 
             Text("Version \(version)")

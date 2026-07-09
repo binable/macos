@@ -14,7 +14,7 @@ xcodebuild \
 
 APP=$(find ~/Library/Developer/Xcode/DerivedData/Binable-*/Build/Products/Debug -name "*.app" | head -1)
 
-codesign --force --sign - "$APP/Contents/MacOS/binable"
+codesign --force --sign - "$APP/Contents/MacOS/Binable"
 codesign --force --sign - "$APP"
 
 echo "\nBuild OK: $APP"
