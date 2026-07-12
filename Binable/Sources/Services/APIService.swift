@@ -36,7 +36,7 @@ actor APIService {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         if let key = apiKey, !key.isEmpty {
-            request.setValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
+            request.setValue("ApiKey \(key)", forHTTPHeaderField: "Authorization")
         }
 
         let body: [String: String] = [
