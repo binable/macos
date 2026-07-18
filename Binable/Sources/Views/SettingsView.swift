@@ -6,6 +6,9 @@ struct SettingsView: View {
     @ObservedObject private var settings = AppSettings.shared
     @State private var showAddSheet = false
 
+    private let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    private let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
+
     var body: some View {
         TabView {
             locationsTab
@@ -71,6 +74,10 @@ struct SettingsView: View {
                 Text("Nur erforderlich wenn dein Account API-Zugriff benötigt.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+            }
+
+            Section("Über") {
+                LabeledContent("Version", value: "\(version) (\(build))")
             }
         }
         .formStyle(.grouped)

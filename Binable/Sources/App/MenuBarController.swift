@@ -10,7 +10,8 @@ final class MenuBarController: NSObject, NSMenuDelegate {
     private var cancellables = Set<AnyCancellable>()
 
     private var settingsWindow: NSWindow?
-    private var aboutWindow: NSWindow?
+
+    private let websiteURL = URL(string: "https://binable.app")!
 
     override init() {
         super.init()
@@ -79,7 +80,7 @@ final class MenuBarController: NSObject, NSMenuDelegate {
         settingsItem.target = self
         menu.addItem(settingsItem)
 
-        let aboutItem = NSMenuItem(title: "Über Binable", action: #selector(openAbout), keyEquivalent: "")
+        let aboutItem = NSMenuItem(title: "Über Binable", action: #selector(openWebsite), keyEquivalent: "")
         aboutItem.target = self
         menu.addItem(aboutItem)
 
@@ -151,19 +152,8 @@ final class MenuBarController: NSObject, NSMenuDelegate {
         NSApp.activate(ignoringOtherApps: true)
     }
 
-    @objc private func openAbout() {
-        if aboutWindow == nil {
-            let view = AboutView()
-            let hosting = NSHostingController(rootView: view)
-            let window = NSWindow(contentViewController: hosting)
-            window.title = "Über Binable"
-            window.styleMask = [.titled, .closable]
-            window.center()
-            window.isReleasedWhenClosed = false
-            aboutWindow = window
-        }
-        aboutWindow?.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
+    @objc private func openWebsite() {
+        NSWorkspace.shared.open(websiteURL)
     }
 
     // NSMenuDelegate — refresh data when user opens the menu

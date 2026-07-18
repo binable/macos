@@ -17,7 +17,6 @@
 		688DE5EF3D7D96FE24D7E6D1 /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC15240CBA2193BCEE792B4 /* AddLocationView.swift */; };
 		A0E01EF9EB175A6280267DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C00E5AD32313E079C5E367 /* Assets.xcassets */; };
 		D6FDFA423A156F51B37760EB /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD86AA1418AB484019A795A0 /* MenuBarController.swift */; };
-		E3DFCDEB9B1428887F3D244F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35348DBE9896017C4604016 /* AboutView.swift */; };
 		EE5B66BF339649D40EDEFB0C /* FetchFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164308A85126BF7E7A9085D /* FetchFrequency.swift */; };
 		FBDF10596BD9B1A3F8773C52 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF16C6167E654095314D59 /* AppSettings.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +35,6 @@
 		AD9E29FA95288E0921C59F8D /* StoredLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLocation.swift; sourceTree = "<group>"; };
 		B6AECA31E2DAB494036CAC2F /* BinableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinableApp.swift; sourceTree = "<group>"; };
 		BD86AA1418AB484019A795A0 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
-		D35348DBE9896017C4604016 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E164308A85126BF7E7A9085D /* FetchFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFrequency.swift; sourceTree = "<group>"; };
 		F4AE0D2E51BAEC0261ADCAE8 /* PickupStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +82,6 @@
 		578F586D4C5B8F53FC9F3A2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D35348DBE9896017C4604016 /* AboutView.swift */,
 				3CC15240CBA2193BCEE792B4 /* AddLocationView.swift */,
 				31EE2AE9013F161A7096BA9B /* SettingsView.swift */,
 			);
@@ -191,7 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27C8D86165611FA2EE583CD3 /* APIService.swift in Sources */,
-				E3DFCDEB9B1428887F3D244F /* AboutView.swift in Sources */,
 				688DE5EF3D7D96FE24D7E6D1 /* AddLocationView.swift in Sources */,
 				FBDF10596BD9B1A3F8773C52 /* AppSettings.swift in Sources */,
 				03B3D3F85EB92956B1F57D5A /* BinableApp.swift in Sources */,
@@ -242,6 +238,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_DEBUG_DYLIB = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -256,6 +253,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +298,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_DEBUG_DYLIB = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -319,6 +318,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
