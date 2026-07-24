@@ -47,20 +47,22 @@ final class MenuBarController: NSObject, NSMenuDelegate {
 
         let store = PickupStore.shared
 
-        if store.isLoading {
+        if !store.results.isEmpty {
+            // Always show the last known data — even while loading or offline —
+            // so the user never sees an empty menu.
+            for result in store.results {
+                addLocationSection(result)
+            }
+        } else if store.isLoading {
             menu.addItem(NSMenuItem(title: "Lade Termine…", action: nil, keyEquivalent: ""))
         } else if AppSettings.shared.locations.isEmpty {
             let item = NSMenuItem(title: "Keine Standorte konfiguriert", action: nil, keyEquivalent: "")
             item.isEnabled = false
             menu.addItem(item)
-        } else if store.results.isEmpty {
+        } else {
             let item = NSMenuItem(title: "Noch keine Daten – bitte aktualisieren", action: nil, keyEquivalent: "")
             item.isEnabled = false
             menu.addItem(item)
-        } else {
-            for result in store.results {
-                addLocationSection(result)
-            }
         }
 
         menu.addItem(.separator())
@@ -100,14 +102,17 @@ final class MenuBarController: NSObject, NSMenuDelegate {
         headerItem.isEnabled = false
         menu.addItem(headerItem)
 
-        if let error = result.error {
-            let errItem = NSMenuItem(title: "  ⚠ \(error)", action: nil, keyEquivalent: "")
-            errItem.isEnabled = false
-            menu.addItem(errItem)
-        } else if result.entries.isEmpty {
-            let emptyItem = NSMenuItem(title: "  Keine Termine gefunden", action: nil, keyEquivalent: "")
-            emptyItem.isEnabled = false
-            menu.addItem(emptyItem)
+        if result.entries.isEmpty {
+            // No cached data to fall back on — show the error, or an empty hint.
+            if let error = result.error {
+                let errItem = NSMenuItem(title: "  ⚠ \(error)", action: nil, keyEquivalent: "")
+                errItem.isEnabled = false
+                menu.addItem(errItem)
+            } else {
+                let emptyItem = NSMenuItem(title: "  Keine Termine gefunden", action: nil, keyEquivalent: "")
+                emptyItem.isEnabled = false
+                menu.addItem(emptyItem)
+            }
         } else {
             for entry in result.entries {
                 let icon = wasteIcon(for: entry.label)
@@ -116,9 +121,32 @@ final class MenuBarController: NSObject, NSMenuDelegate {
                 item.isEnabled = false
                 menu.addItem(item)
             }
+
+            // Latest fetch failed but we still have cached entries: keep them visible
+            // and add a subtle offline note with the date they were last updated.
+            if result.isStale {
+                let note = staleNote(for: result.lastFetched)
+                let attrs: [NSAttributedString.Key: Any] = [
+                    .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+                    .foregroundColor: NSColor.secondaryLabelColor
+                ]
+                let noteItem = NSMenuItem(title: note, action: nil, keyEquivalent: "")
+                noteItem.attributedTitle = NSAttributedString(string: note, attributes: attrs)
+                noteItem.isEnabled = false
+                menu.addItem(noteItem)
+            }
         }
 
         menu.addItem(.separator())
+    }
+
+    private func staleNote(for lastFetched: Date?) -> String {
+        guard let lastFetched else { return "  ⚠︎ Offline – zeige letzte bekannte Daten" }
+        let f = DateFormatter()
+        f.locale = Locale(identifier: "de_DE")
+        f.dateStyle = .medium
+        f.timeStyle = .short
+        return "  ⚠︎ Offline – Stand: \(f.string(from: lastFetched))"
     }
 
     private func wasteIcon(for label: String) -> String {

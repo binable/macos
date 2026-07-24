@@ -31,7 +31,7 @@ struct BinableResponse: Decodable {
     }
 }
 
-struct PickupEntry: Decodable, Hashable {
+struct PickupEntry: Codable, Hashable {
     let date: String
     let label: String
 
@@ -57,4 +57,13 @@ struct LocationPickups: Identifiable {
     var entries: [PickupEntry]
     var error: String?
     var lastFetched: Date?
+    /// True when the displayed entries come from the cache because the latest fetch failed.
+    var isStale: Bool = false
+}
+
+/// Last successfully fetched pickups for a location, persisted so they survive
+/// restarts and network outages.
+struct CachedPickups: Codable {
+    var entries: [PickupEntry]
+    var fetchedAt: Date
 }
